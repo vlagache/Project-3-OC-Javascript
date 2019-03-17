@@ -1,0 +1,473 @@
+*{font-family: 'Quicksand', sans-serif;}
+body
+{
+  margin:0;
+
+
+}
+/* ====================== HEADER =============================  */
+h1{text-align: center;}
+.dublin{color :#15965f;}
+
+#slogan
+{
+  font-family: 'Bad Script', cursive;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+#clover
+{
+  height: 50px;
+  position: absolute;
+  top: 1%;
+  right: 58%;
+  transform: rotate(-40deg);
+}
+/* ======================  Slider ===========================  */
+#diaporama
+{
+  width: 100%;
+  height: 400px;
+}
+#slider
+{
+  position:relative;
+  display:flex;
+  justify-content: space-around;
+  margin-top: 44px;
+}
+#image_slider
+{
+  border: 1px solid black;
+  position: absolute;
+  right:42%;
+}
+#slider #description
+{
+  width: 350px;
+  height: 205px;
+  text-align: justify;
+  position: absolute;
+  right: 15%;
+  font-size: 1.1em;
+}
+#arrow_left,
+#arrow_right
+{
+  font-size: 3em;
+  color: #15965f;
+}
+#pause
+{
+  font-size: 1.5em;
+  position: absolute;
+  right:25%;
+  top: 12em;
+  color: #15965f;
+}
+#play
+{
+  display: none;
+  font-size: 1.5em;
+  position: absolute;
+  right:25%
+  top: 12em;
+  color : #15965f;
+}
+#arrow_left
+{
+  position : absolute;
+  left:5%;
+  top: 2.5em;
+}
+#arrow_right
+{
+  position : absolute;
+  right:5%;
+  top:2.5em;
+}
+/* ======================= MAP ================================== */
+#map{position:relative;}
+#mapid
+{
+  width: 95%;
+  height: 700px;
+  margin: auto;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.popup
+{
+  position:relative;
+  top: -100px;
+
+
+}
+.popup .leaflet-popup-tip
+{
+  background: rgba(255, 255, 255, 0.9);
+
+}
+.popup .leaflet-popup-content-wrapper
+{
+  font-size: 1.2em;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.7);
+
+}
+
+/* =========================== INFO STATION ================== */
+#info_station
+{
+  display: none;
+  text-align: left;
+  border: 1px dashed #15965f;
+  padding: 0 1em 0 1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  width: 300px;
+  position:absolute;
+  top: 4%;
+  right: 4%;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#title_infoStation
+{
+  font-family: 'Bad Script', cursive;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+.separation_line
+{
+  margin:auto;
+  margin-top: 15px;
+  border-bottom: 1px solid #15965f;
+  width: 75px;
+}
+form
+{
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+#form_nom{margin-bottom: -15px;}
+#nom
+{
+  border: 1px dashed #15965f;
+  position:relative;
+  left:24px;
+}
+#prenom{border: 1px dashed #15965f;}
+#warning
+{
+  display: none;
+  color:red;
+  position: relative;
+  left: 45%;
+  margin-top: 15px;
+  font-size: 1.5em;
+
+
+}
+#errorMsg
+{
+
+
+  display:none;
+  text-align: justify;
+  font-size: 0.8em;
+
+}
+#button_confirmation
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 20%;
+  background: #f5f5f5;
+  border:none;
+  color:#555;
+  font-weight: bold;
+  padding:6px;
+}
+#button_close
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 30%;
+	background: #f5f5f5;
+	border:none;
+	color:#555;
+	font-weight: bold;
+	padding:6px;
+
+}
+#button_close:hover ,
+#button_confirmation:hover
+{
+  box-shadow:1px 1px 3px #999;
+}
+
+/* ============================== ZONE CANVAS ==================== */
+#title_blocCanvas
+{
+    font-family: 'Bad Script', cursive;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+#bloc_canvas
+{
+  visibility: hidden;
+  text-align: justify;
+  border: 1px dashed #15965f;
+  padding: 0 1em 0 1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  width: 300px;
+  position:absolute;
+  top: 4%;
+  right: 4%;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+#stationNameCanvas,
+#nomCanvas,
+#prenomCanvas
+{color:#15965f;}
+
+#canvas
+{
+
+  margin-top: 15px;
+  margin-bottom:15px;
+  z-index: 2;
+  background-color: white;
+  border:1px dashed #15965f;
+}
+#canvas:hover{cursor:crosshair}
+#button_reservation
+{
+  position: relative;
+  left: 20%;
+  background: #f5f5f5;
+  border:none;
+  color:#555;
+  font-weight: bold;
+  padding:6px;
+  margin-bottom: 15px;
+}
+#button_closeCanvas
+{
+  position: relative;
+  left: 40%;
+  background: #f5f5f5;
+  border:none;
+  color:#555;
+  font-weight: bold;
+  padding:6px;
+}
+#button_clearCanvas
+{
+  position: relative;
+  left: 40%;
+  background: #f5f5f5;
+  border:none;
+  color:#555;
+  font-weight: bold;
+  padding:6px;
+}
+#button_reservation:hover ,
+#button_closeCanvas:hover ,
+#button_clearCanvas:hover
+{
+  box-shadow:1px 1px 3px #999;
+}
+
+/* =========================== RESERVATION ================== */
+#bloc_resa
+{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  height: 75px;
+  width: 95%;
+  border: 1px dashed black;
+  z-index: 1;
+}
+#noReservation
+{
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+
+}
+#reservation
+{
+
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+#stationName,
+#nomResa,
+#prenomResa,
+#min,
+#sec
+{
+  color:#15965f;
+}
+
+#timer
+{
+  display:none;
+  font-weight: bold;
+  text-align: center;
+  margin:15px 0px 15px 0px;
+
+}
+#message
+{
+  display:none;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+#deleteResa
+{
+  display: none;
+z-index: 3;
+ position: absolute;
+ top: 20%;
+ right : 30%;
+ font-size: 2em;
+ color: #15965f;
+}
+#deleteResaMsg
+{
+  display: none;
+  position:absolute;
+  top: 20%;
+  right: 21%;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+#deleteResa:hover + #deleteResaMsg{display:block;}
+/* =========================== FOOTER ================== */
+footer
+{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  height: 45px;
+  width: 95%;
+  border: 1px dashed black;
+  z-index: 1;
+
+}
+#copyright
+{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* =========================== MEDIA QUERIES ================== */
+/* 1750px */
+@media all and (max-width: 1750px)
+{
+  /* ==== SLIDER ===== */
+ #image_slider
+ {
+   width: 715px;
+   height: 280px;
+ }
+ /* ===== RESERVATION ===== */
+ #deleteResa{right: 25%;}
+ #deleteResaMsg{right:13%;}
+}
+/* 1600px */
+@media all and (max-width: 1600px)
+{
+  /* ==== SLIDER ===== */
+  #image_slider
+  {
+    width: 636px;
+    height: 249px;
+  }
+}
+/*1400 px */
+@media all and (max-width: 1400px)
+{
+/* ==== HEADER ===== */
+#clover{right:62%;}
+/* ==== SLIDER ===== */
+#image_slider
+{
+  position: static;
+}
+ #slider #description
+ {
+   top: 16em;
+   left: 50%;
+   margin-left: -175px;
+ }
+ #play{right: 50%;top:24em;}
+ #pause{right: 50%;top:24em;}
+ #arrow_right{right:7%;}
+ /* ===== MAP ==== */
+ #mapid
+ {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 25%;
+ }
+}
+/*1150 px */
+@media all and (max-width: 1150px)
+{
+  /* ==== SLIDER ===== */
+
+ #arrow_left
+ {
+   left: 15%;
+   top: 11.5em;
+ }
+ #arrow_right
+ {
+   top: 11.5em;
+   right: 19%;
+ }
+
+}
+@media all and (max-width: 900px)
+{
+  /* ==== HEADER ===== */
+  #clover{right:67%;}
+  /* ===== MAP ==== */
+  #mapid
+  {
+    margin-top: 35%;
+  }
+}
+@media all and (max-width: 650px)
+{
+  /* ==== HEADER ===== */
+  #clover{right:74%;}
+  /* ===== MAP ==== */
+  #mapid
+  {
+    margin-top: 45%;
+  }
+}

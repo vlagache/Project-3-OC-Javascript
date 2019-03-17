@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title> DublinBikes - [ Site etudiant ]</title>
+        <link rel="icon" type="image/png" href="images/clover.png" />
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+        integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+        crossorigin=""/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+
+    <body>
+
+
+
+        <header>
+            <img src="images/clover.png" id="clover">
+            <h1> <span class="dublin">DUBLIN</span>BIKES </h1>
+            <div id="slogan"> La manière la plus simple de réserver un vélo à Dublin ! </div>
+        </header>
+
+        <section id="diaporama">
+          <div id="slider">
+            <div id="arrow_left">
+              <i class="fas fa-arrow-left"></i>
+            </div>
+            <img src="images/slide1.jpg" id="image_slider">
+            <div id="description"></div>
+            <div id="play">
+              <i class="far fa-play-circle"></i>
+            </div>
+            <div id="pause">
+              <i class="far fa-pause-circle"></i>
+            </div>
+            <div id="arrow_right">
+              <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </section>
+
+
+      <section id = "map">
+
+
+              <div id="mapid"></div>
+
+              <div id="info_station">
+                <div id="title_infoStation">Information sur la station</div>
+                <div class="separation_line"></div>
+                <p> Nom : <span id="name"></span></p>
+                <p> Etat : <span id="status"></span>  </p>
+                <p> Places disponibles : <span id="availableBikeStands"></span></p>
+                <p id="availBikes"> Vélos disponibles : <span id="availableBikes"></span>  </p>
+                <p> Derniere mise à jour : <span id="lastUpdate"></span>  </p>
+                <div class="separation_line"></div>
+                <form>
+                  <p id="form_nom">
+                    <label for="pseudo">Nom</label> :
+                    <input type="text" name="nom" id="nom" required>
+                  </p>
+                  <p>
+                    <label for="pseudo">Prénom</label> :
+                    <input type="text" name="prenom" id="prenom" required>
+                  </p>
+                  <div class="separation_line"></div>
+                  <div id="warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                  </div>
+                  <p id="errorMsg"></p>
+                  <input type="submit" value="Confirmer" id="button_confirmation"/>
+                  <button id="button_close">Fermer</button>
+                </form>
+              </div>
+
+              <div id="bloc_canvas" >
+                <div id="title_blocCanvas">Résumé de la réservation</div>
+                <div class="separation_line"></div>
+
+                <p> Vous avez choisi de réserver un vélo à la station <span id="stationNameCanvas"></span> au nom de <span id="nomCanvas"></span> <span id="prenomCanvas"></span> , il ne vous reste plus qu'à signer dans la zone ci-dessous pour confirmer votre réservation pour une durée de 20 minutes.  À l'issu de ce temps votre réservation sera annulé. Vous pouvez revenir en arrière pour modifier votre reservation avec le bouton "Annuler" . Bonne route et soyez prudent ! </p>
+
+                <button id="button_closeCanvas">Annuler</button>
+                <div class="separation_line"></div>
+                <canvas id="canvas" width="300" height="150"></canvas>
+                <button id="button_reservation">Réserver</button>
+                <button id="button_clearCanvas">Effacer</button>
+              </div>
+      </section>
+
+
+      <section id="resa">
+
+        <div id="bloc_resa">
+
+          <div id="noReservation">Pas de réservation en cours</div>
+          <div id="reservation">Vélo réservé à la station <span id=stationName></span> par <span id=nomResa></span><span id=prenomResa></span></div>
+          <div id="timer"> Temps restant : <span id="min"></span><span id="sec"></span></div>
+          <div id="message">Réservation supprimée</div>
+          <div id="deleteResa">
+            <i class="fas fa-times"></i>
+          </div>
+          <div id="deleteResaMsg">
+            <p> Annuler la réservation </p>
+          </div>
+        </div>
+      </section>
+
+        <footer>
+          <div id=copyright>Copyright 2019 - Vincent LAGACHE Parcours DWJ Openclassrooms</div>
+        </footer>
+
+
+
+      <script src="js/ajax.js"></script>
+      <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+crossorigin=""></script>
+      <script src="js/canvas.js"></script>
+      <script src="js/station.js"></script>
+      <script src="js/reservation.js"></script>
+      <script src="js/diaporama.js"></script>
+      <script src="js/timer.js"></script>
+      <script src="js/data.js"></script>
+      <script src="js/map.js"></script>
+      <script src="js/main.js"></script>
+
+    </body>
+</html>
