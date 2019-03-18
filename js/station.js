@@ -1,12 +1,11 @@
 
 // Class Station & Methodes
 class Station {
-  constructor(name, status, available_bike_stands, available_bikes, last_update, position, number){
+  constructor(name, status, available_bike_stands, available_bikes, position, number){
     this.name = name;
     this.status = status;
     this.available_bike_stands = available_bike_stands;
     this.available_bikes = available_bikes;
-    this.last_update = last_update;
     this.position = position;
     this.number = number;
   }
@@ -55,7 +54,6 @@ class Station {
     document.getElementById("status").textContent = statusTraduction;
     document.getElementById("availableBikeStands").textContent = this.available_bike_stands;
     document.getElementById("availableBikes").textContent = this.available_bikes;
-    document.getElementById("lastUpdate").textContent = this.last_update;
   }
   refreshData(station) {
     ajaxGet("https://api.jcdecaux.com/vls/v1/stations/"+station.number+"?contract=Dublin&apiKey=7002c71d83d21668d83abaf4ae6f36bdaaa6ab55", function (reponse){

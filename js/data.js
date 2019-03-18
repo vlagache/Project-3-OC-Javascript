@@ -7,7 +7,7 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=7002c71
     var listStations = JSON.parse(reponse); // On transforme l'objet JSON en tableau Javascript
     listStations.forEach(function (station){ // Boucle sur chaque station
       // Creation des objets Station
-      var stationObj = new Station(station.name, station.status, station.available_bike_stands, station.available_bikes, station.last_update, station.position, station.number);
+      var stationObj = new Station(station.name, station.status, station.available_bike_stands, station.available_bikes, station.position, station.number);
 
       stationObjs.push(stationObj); // tu mets l'objets Station dans un tableau
 
