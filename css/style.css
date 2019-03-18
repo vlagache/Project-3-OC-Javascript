@@ -2,48 +2,65 @@
 body
 {
   margin:0;
-
-
 }
 /* ====================== HEADER =============================  */
 h1{text-align: center;}
-.dublin{color :#15965f;}
-
-#slogan
+#bloc_header
 {
-  font-family: 'Bad Script', cursive;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.5em;
+  position:relative;
+  margin:auto;
+  width: 550px;
+  height: 130px;
+}
+#dublin
+{
+  color :#15965f;
+  position:absolute;
+  right: 47%;
+}
+#bikes
+{
+  position:absolute;
+  right: 31%;
+
 }
 #clover
 {
   height: 50px;
   position: absolute;
-  top: 1%;
-  right: 58%;
   transform: rotate(-40deg);
+  top:-8%;
+  left:20%;
 }
+
+#slogan
+{
+  position:absolute;
+  top:37%;
+  left:6%;
+  font-family: 'Bad Script', cursive;
+  font-size: 1.4em;
+}
+
 /* ======================  Slider ===========================  */
 #diaporama
 {
+
   width: 100%;
-  height: 400px;
-}
-#slider
-{
+  height: 330px;
   position:relative;
   display:flex;
   justify-content: space-around;
-  margin-top: 44px;
+  margin-bottom: 50px;
 }
+
 #image_slider
 {
   border: 1px solid black;
   position: absolute;
   right:42%;
 }
-#slider #description
+#description
 {
   width: 350px;
   height: 205px;
@@ -63,29 +80,29 @@ h1{text-align: center;}
   font-size: 1.5em;
   position: absolute;
   right:25%;
-  top: 12em;
-  color: #15965f;
+  top: 85%;
+  color : #15965f;
 }
 #play
 {
-  display: none;
+  display:none;
   font-size: 1.5em;
   position: absolute;
-  right:25%
-  top: 12em;
+  right:25%;
+  top: 85%;
   color : #15965f;
 }
 #arrow_left
 {
   position : absolute;
   left:5%;
-  top: 2.5em;
+  top: 40%;
 }
 #arrow_right
 {
   position : absolute;
   right:5%;
-  top:2.5em;
+  top:40%;
 }
 /* ======================= MAP ================================== */
 #map{position:relative;}
@@ -101,7 +118,7 @@ h1{text-align: center;}
 .popup
 {
   position:relative;
-  top: -100px;
+  top: -105px;
 
 
 }
@@ -169,17 +186,12 @@ form
   left: 45%;
   margin-top: 15px;
   font-size: 1.5em;
-
-
 }
 #errorMsg
 {
-
-
   display:none;
   text-align: justify;
   font-size: 0.8em;
-
 }
 #button_confirmation
 {
@@ -235,8 +247,6 @@ form
   z-index: 3;
   background-color: rgba(255, 255, 255, 0.9);
 }
-
-
 #stationNameCanvas,
 #nomCanvas,
 #prenomCanvas
@@ -317,7 +327,6 @@ form
   margin-top: 15px;
   font-weight: bold;
 }
-
 #stationName,
 #nomResa,
 #prenomResa,
@@ -411,63 +420,117 @@ footer
 @media all and (max-width: 1400px)
 {
 /* ==== HEADER ===== */
-#clover{right:62%;}
 /* ==== SLIDER ===== */
+#diaporama
+{
+  height: 650px;
+  margin-bottom:0px;
+}
+#img_arrows{position:relative;}
 #image_slider
 {
   position: static;
 }
- #slider #description
+ #description
  {
-   top: 16em;
+   top: 45%;
    left: 50%;
    margin-left: -175px;
  }
- #play{right: 50%;top:24em;}
- #pause{right: 50%;top:24em;}
- #arrow_right{right:7%;}
- /* ===== MAP ==== */
- #mapid
- {
-   margin-left: auto;
-   margin-right: auto;
-   margin-top: 25%;
- }
-}
-/*1150 px */
-@media all and (max-width: 1150px)
-{
-  /* ==== SLIDER ===== */
-
+ #play,
+ #pause
+ {right: 50%;top:90%;}
  #arrow_left
  {
-   left: 15%;
-   top: 11.5em;
+   top: 15%;
+   left: -28%;
  }
  #arrow_right
  {
-   top: 11.5em;
-   right: 19%;
- }
-
+   top: 15%;
+   right: -28%;
+  }
 }
-@media all and (max-width: 900px)
+@media all and (max-width: 1050px)
 {
   /* ==== HEADER ===== */
-  #clover{right:67%;}
-  /* ===== MAP ==== */
-  #mapid
+  /* ==== SLIDER ===== */
+  #arrow_left
   {
-    margin-top: 35%;
+    top: 15%;
+    left: 3%;
+    color:white;
   }
+  #arrow_right
+  {
+    top: 15%;
+    right: 3%;
+    color:white;
+   }
+  /* ===== MAP ==== */
+
 }
 @media all and (max-width: 650px)
 {
   /* ==== HEADER ===== */
-  #clover{right:74%;}
+  /* ==== SLIDER ===== */
+  #image_slider
+  {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
+  }
   /* ===== MAP ==== */
   #mapid
   {
-    margin-top: 45%;
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
   }
+}
+@media all and (max-width: 550px)
+{
+  /* ==== HEADER ===== */
+  #bloc_header
+  {
+    height: 50px;
+    width: 350px;
+  }
+  #clover{left:10%;}
+  #dublin{right:40%;}
+  #bikes{right:16%;}
+  #slogan{display:none;}
+  /* ==== SLIDER ===== */
+  #diaporama{height: 550px;margin-bottom: 25px;margin-top:15px;}
+  #arrow_right,
+  #arrow_left
+  {
+    font-size: 2.5em;
+    top : 12%;
+  }
+  #description{top:42%;}
+  #play,
+  #pause
+  {top:92%;font-size:2em;}
+  /* ===== MAP ==== */
+}
+@media all and (max-width: 360px)
+{
+  /* ==== SLIDER ===== */
+  #diaporama{height: 480px;margin-bottom: 0px;}
+  #description{top:31%;}
+  #arrow_right,
+  #arrow_left
+  {top : 10%;}
+  #play,
+  #pause
+  {top:88%;}
+
+
+
 }
