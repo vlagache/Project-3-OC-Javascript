@@ -58,7 +58,6 @@ class Canvas{
   }
 
   draw(e){
-      this.clear();
       this.mouseCanvas(e);
       this.drawActive = 1;
       this.ctx.beginPath();
@@ -88,20 +87,13 @@ class Canvas{
     this.mouseCanvasY = e.clientY - rect.top;
   };
   alertCanvasEmpty(){
-
     if(this.canvasNotEmpty == 0){
-
-        if ( sessionStorage.getItem("nomStationSaveResa") != null ){ // Si une reservation est deja lancé
-          this.ctx.strokeStyle = "#15965f";
-          this.ctx.font = "normal 14px Quicksand";
+          this.ctx.strokeStyle = "red";
+          this.ctx.font = "normal 12px Quicksand";
           this.ctx.strokeText("Signature requise pour lancer la réservation", 9, 75);
-          } else {
-          this.ctx.strokeStyle = "#15965f";
-          this.ctx.font = "normal 14px Quicksand";
-          this.ctx.strokeText("Vous n'avez pas signé", 70, 75);
-          noReservationElt.textContent="Nous avons besoin de votre signature pour lancer la réservation";
-          noReservationElt.style.display="block";
-        }
+          setTimeout ( () =>{
+            this.clear();
+        },2500);
     }
   }
 

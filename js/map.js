@@ -23,7 +23,7 @@
  	function displayPopupMarker(station) {
     popup
       .setLatLng([station.position.lat,station.position.lng])
- 			.setContent("Station : "  + station.name)
+ 			.setContent(station.name)
  			.openOn(mymap);
  	}
 // Ajout du layer

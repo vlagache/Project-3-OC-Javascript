@@ -30,10 +30,13 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=7002c71
         displayPopupMarker(stationObjs[this.options.stationId]);
         // Centrer et zoom sur le marker séléctionné
         mymap.setView([station.position.lat, station.position.lng],16);
+
         // Test Refresh
         // stationObj.refreshData(stationObjs[this.options.stationId]);
+
+        noInfoStationElt.style.display="none";
         infoStationElt.style.display= "block";
-        blocCanvasElt.style.visibility="hidden";
+        blocCanvasElt.style.display="none";
         canvasObj.clear();
 
         test(stationObjs[this.options.stationId]);

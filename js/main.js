@@ -65,6 +65,8 @@ document.addEventListener("keydown", function(e){
 
 /* ================================= INFO STATION  =================================== */
 // Variables
+// Bloc noInfo
+var noInfoStationElt = document.getElementById("noInfoStation");
 // Bloc Infos
 var infoStationElt = document.getElementById("info_station");
 var form = document.querySelector("form");
@@ -102,8 +104,6 @@ var timerObj = null;
 ///////////////////////////////////////// Canvas
 var canvasObj = new Canvas();
 
-
-
 canvas.addEventListener("mousedown",function(e){
   canvasObj.draw(e);
 });
@@ -120,7 +120,7 @@ canvas.addEventListener("mousemove",function(e){
 
 form.addEventListener("submit", function(e){
   e.preventDefault();
-  blocCanvasElt.style.visibility="visible";
+  blocCanvasElt.style.display="block";
   infoStationElt.style.display="none";
 
   stationNameCanvasElt.textContent = document.getElementById("name").textContent;
@@ -131,17 +131,12 @@ form.addEventListener("submit", function(e){
 
 ///////////////////////////////////////// Bouton fermer bloc Infos
 
-
-
-
 button_close.addEventListener("click", function(e) {
   e.preventDefault();
   infoStationElt.style.display= "none";
 });
 
 ///////////////////////////////////////// Bouton Reservation Canvas
-
-
 
 button_reservation.addEventListener("click", function(e) {
   messageElt.style.display = "none";
@@ -163,19 +158,19 @@ button_reservation.addEventListener("click", function(e) {
     resaObj.display();
     timerObj.countdown();
 
-    blocCanvasElt.style.visibility="hidden";
+    blocCanvasElt.style.display="none";
     deleteResaElt.style.display="block";
 
     canvasObj.clear(); // clear la zone de canvas pour ne pas avoir l'affichage d'une ancienne signature lors d'une nouvelle reservation.
     canvasObj.canvasNotEmpty = 0;
+    //mymap.closePopup();
   };
 });
+
 ///////////////////////////////////////// Bouton Fermer Canvas
 
-
-
 button_closeCanvas.addEventListener("click",function(){
-  blocCanvasElt.style.visibility="hidden";
+  blocCanvasElt.style.display="none";
   infoStationElt.style.display="block";
   canvasObj.clear();
 
@@ -198,13 +193,13 @@ deleteResaElt.addEventListener("click",function(){
   sessionStorage.removeItem("nomStationSaveResa");
 
 
+  noInfoStationElt.style.display="block";
   reservationElt.style.display="none";
   messageElt.style.display="block";
   timerElt.style.display = "none";
   deleteResaElt.style.display="none";
 
 })
-
 
 ///////////////////////////////////////// Affichage des valeurs nom&prenom dans les cases du formulaire
 
@@ -220,18 +215,16 @@ window.addEventListener("load", function(){
   //sessionStorage.clear();localStorage.clear();
   if ( sessionStorage.getItem("nomStationSaveResa") != null ){
 
+    noInfoStationElt.style.display="none";
     noReservationElt.style.display="none";
     reservationElt.style.display="block";
     timerElt.style.display="block";
     deleteResaElt.style.display="block";
     messageElt.style.display = "none";
 
-
-
     statioNameElt.textContent = sessionStorage.getItem("nomStationSaveResa");
     nomResaElt.textContent = localStorage.getItem("nomSaveResa");
     prenomResaElt.textContent = localStorage.getItem("prenomSaveResa");
-
 
     let min = sessionStorage.getItem("minSaveResa");
     let sec = sessionStorage.getItem("secSaveResa");

@@ -33,7 +33,7 @@ countdown(){
         minElt.textContent = this.min + " min ";
         secElt.textContent = this.sec + " s ";
       }
-    },500);
+    },1000);
   }
 
 clearCountdown(){

@@ -52,6 +52,10 @@
 
               <div id="mapid"></div>
 
+              <div id="noInfoStation">
+                <p> Cliquez sur la station de votre choix !</p>
+              </div>
+
               <div id="info_station">
                 <div id="title_infoStation">Information sur la station</div>
                 <div class="separation_line"></div>
@@ -83,13 +87,18 @@
                 <div id="title_blocCanvas">Résumé de la réservation</div>
                 <div class="separation_line"></div>
 
-                <p> Vous avez choisi de réserver un vélo à la station <span id="stationNameCanvas"></span> au nom de <span id="nomCanvas"></span> <span id="prenomCanvas"></span> , il ne vous reste plus qu'à signer dans la zone ci-dessous pour confirmer votre réservation pour une durée de 20 minutes.  À l'issu de ce temps votre réservation sera annulé. Vous pouvez revenir en arrière pour modifier votre reservation avec le bouton "Annuler" . Bonne route et soyez prudent ! </p>
+                <div id="infoCanvas">
+                  <p> Vous avez choisi de réserver un vélo à la station <span id="stationNameCanvas"></span> au nom de <span id="nomCanvas"></span> <span id="prenomCanvas"></span> , il ne vous reste plus qu'à signer dans la zone ci-dessous pour confirmer votre réservation pour une durée de 20 minutes.  À l'issu de ce temps votre réservation sera annulé. Vous pouvez revenir en arrière pour modifier votre reservation avec le bouton "Annuler" . Bonne route et soyez prudent ! </p>
+                </div>
 
-                <button id="button_closeCanvas">Annuler</button>
-                <div class="separation_line"></div>
-                <canvas id="canvas" width="300" height="150"></canvas>
-                <button id="button_reservation">Réserver</button>
-                <button id="button_clearCanvas">Effacer</button>
+                <div id="buttonCanvasR">
+                  <button id="button_closeCanvas">Annuler</button>
+                  <div class="separation_line"></div>
+                  <canvas id="canvas" width="260" height="150"></canvas>
+                  <button id="button_reservation">Réserver</button>
+                  <button id="button_clearCanvas">Effacer</button>
+                </div>
+
               </div>
       </section>
 
