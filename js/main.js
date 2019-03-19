@@ -105,16 +105,29 @@ var timerObj = null;
 var canvasObj = new Canvas();
 
 canvas.addEventListener("mousedown",function(e){
+  canvasObj.mouseCanvas(e);
   canvasObj.draw(e);
 });
 
-canvas.addEventListener("mouseup",function(e){
+canvas.addEventListener("mouseup",function(){
 canvasObj.stopDraw();
 });
 
 canvas.addEventListener("mousemove",function(e){
+  canvasObj.mouseCanvas(e);
   canvasObj.moveDraw(e);
 
+});
+canvas.addEventListener("touchstart", function (e) {
+  canvasObj.touchCanvas(e);
+  canvasObj.draw(e);
+});
+canvas.addEventListener("touchend", function (e) {
+  canvasObj.stopDraw();
+});
+canvas.addEventListener("touchmove", function (e) {
+  canvasObj.touchCanvas(e);
+  canvasObj.moveDraw(e);
 });
 ///////////////////////////////////////// Bouton Confirmation Bloc infos
 
