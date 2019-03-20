@@ -1,17 +1,9 @@
-/*
-attribut , station name , nom , prenom
-fonction , displayResa
-*/
-
 class Reservation{
   constructor(nameStation,nom,prenom){
     this.nameStation = nameStation;
     this.nom = nom;
     this.prenom = prenom;
-
-
   }
-
 display(){
     noReservationElt.style.display="none";
     reservationElt.style.display="block";
@@ -21,7 +13,6 @@ display(){
     nomResaElt.textContent = this.nom;
     prenomResaElt.textContent = this.prenom;
     this.saveResa();
-
 }
 saveResa(){
   localStorage.setItem("nomSaveResa", this.nom);

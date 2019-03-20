@@ -587,14 +587,6 @@ footer
     border-right: none;
   }
   /* ===== MAP ==== */
-  #mapid
-  {
-    width: 100%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-left: none;
-    border-right: none;
-  }
   #bloc_canvas
   {
     height: 530px;
@@ -637,10 +629,10 @@ footer
   #noInfoStation{width: 85%; }
   #info_station{width: 85%;}
   #bloc_canvas{width: 85%; }
+  #buttonCanvasR{margin-top: 0px;}
   /* ===== RESA ==== */
   #bloc_resa{width: 85%;}
   #noReservation{left:14%;}
-
   #reservation
   {
     left:16%;
@@ -653,7 +645,11 @@ footer
   }
   #message{left:24%;}
 }
-@media all and (max-width: 360px)
+@media all and (max-width: 450px)
+{
+  #bloc_canvas{height: 570px; }
+}
+@media all and (max-width: 380px)
 {
   /* ==== SLIDER ===== */
   #diaporama{height: 480px;margin-bottom: 0px;}
@@ -669,13 +665,11 @@ footer
   #info_station{width: 85%;}
   #bloc_canvas
   {
-
     height: 620px;
-
   }
   #buttonCanvasR
   {
-    margin-left:-10%;
+    margin-left:-7%;
     width: 350px;
 
   }

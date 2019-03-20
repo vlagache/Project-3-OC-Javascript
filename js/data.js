@@ -9,7 +9,8 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=7002c71
       // Creation des objets Station
       var stationObj = new Station(station.name, station.status, station.available_bike_stands, station.available_bikes, station.position, station.number);
 
-      stationObjs.push(stationObj); // tu mets l'objets Station dans un tableau
+
+      stationObjs.push(stationObj);
 
       // Changement de couleur du marker en fonction du nombre de vélos dispo & ajout du marker sur la carte pour chaque station
 
@@ -31,15 +32,14 @@ ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Dublin&apiKey=7002c71
         // Centrer et zoom sur le marker séléctionné
         mymap.setView([station.position.lat, station.position.lng],16);
 
-        // Test Refresh
-        // stationObj.refreshData(stationObjs[this.options.stationId]);
 
         noInfoStationElt.style.display="none";
         infoStationElt.style.display= "block";
         blocCanvasElt.style.display="none";
         canvasObj.clear();
+        stationObj.display();
 
-        test(stationObjs[this.options.stationId]);
+        infoStationElt.scrollIntoView();
       });
     });
 });

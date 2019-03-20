@@ -1,52 +1,3 @@
-/*
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-var drawActive = 0; // Interrupteur click souris pour le dessin
-var mouseCanvasX = 0;
-var mouseCanvasY = 0;
-
-canvas.width = 300;
-canvas.height = 150;
-
-
-
-rect = canvas.getBoundingClientRect(); // Renvoie la position relative du canvas par rapport à la zone d'affichage
-// Gestion du clic souris
-
-draw();
-
-function draw(){
-  canvas.addEventListener("mousedown", function(e) {
-    mousePosition(e);
-    drawActive = 1;
-    ctx.beginPath();
-    ctx.strokeStyle = "#15965f";
-    ctx.lineWidth=1.5;
-    ctx.lineJoin='round'
-    ctx.lineCap='round';
-    ctx.moveTo(mouseCanvasX,mouseCanvasY);
-
-  })
-
-  canvas.addEventListener("mouseup", function() {
-    drawActive = 0;
-  })
-
-  canvas.addEventListener("mousemove", function(e){
-   mousePosition(e);
-    if(drawActive == 1){
-      ctx.lineTo(mouseCanvasX,mouseCanvasY);
-      ctx.stroke();
-    }
-  });
-};
-
-function mousePosition(e){
-  mouseCanvasX = e.clientX - rect.left;
-  mouseCanvasY = e.clientY - rect.top;
-}
-*/
-
 class Canvas{
   constructor(){
     this.canvas = document.getElementById("canvas");
@@ -56,9 +7,7 @@ class Canvas{
     this.canvasY = 0;
     this.canvasNotEmpty = 0;
   }
-
   draw(e){
-      //this.mouseCanvas(e);
       this.drawActive = 1;
       this.ctx.beginPath();
       this.ctx.strokeStyle = "#15965f";
@@ -71,7 +20,6 @@ class Canvas{
     this.drawActive = 0;
   }
   moveDraw(e){
-    //this.mouseCanvas(e);
     if(this.drawActive == 1){
       this.ctx.lineTo(this.canvasX,this.canvasY);
       this.ctx.stroke();
@@ -86,7 +34,6 @@ class Canvas{
     this.canvasX = e.clientX - rect.left;
     this.canvasY = e.clientY - rect.top;
   }
-
   touchCanvas(e){
     var rect = this.canvas.getBoundingClientRect();
     this.canvasX = e.touches[0].clientX - rect.left;
@@ -101,6 +48,31 @@ class Canvas{
             this.clear();
         },2500);
     }
+  }
+  allListenerCanvas(){
+    let myobj = this;
+    this.canvas.addEventListener("mousedown",function(e){
+        myobj.mouseCanvas(e);
+        myobj.draw(e);
+    });
+    this.canvas.addEventListener("mouseup",function(){
+        myobj.stopDraw();
+    });
+    this.canvas.addEventListener("mousemove",function(e){
+        myobj.mouseCanvas(e);
+        myobj.moveDraw(e);
+    });
+    this.canvas.addEventListener("touchstart", function (e) {
+        myobj.touchCanvas(e);
+        myobj.draw(e);
+    });
+    this.canvas.addEventListener("touchend", function (e) {
+        myobj.stopDraw();
+    });
+    this.canvas.addEventListener("touchmove", function (e) {
+        myobj.touchCanvas(e);
+        myobj.moveDraw(e);
+    });
   }
 
 };

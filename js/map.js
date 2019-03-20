@@ -17,7 +17,7 @@
 
 // Creation de la map
  var mymap = L.map('mapid').setView([53.346497, -6.246155], 14);
-
+ 
 // Creation et affichage du popup sur chaque marker.
  	var popup = L.popup({className:"popup"});
  	function displayPopupMarker(station) {
