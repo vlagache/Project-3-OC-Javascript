@@ -6,15 +6,9 @@ class Timer {
 
   }
 
-
 countdown(){
-
-
-
     this.interval = setInterval ( () =>{
       this.timerSave();
-      /*console.log(sessionStorage.getItem("minSaveResa")+ "min" + sessionStorage.getItem("secSaveResa")+ "sec" );*/
-
       if ( this.min === 0 && this.sec === 0){
         this.clearCountdown();
         this.clearTimerSave();
@@ -27,7 +21,7 @@ countdown(){
       } else {
         if ( this.sec === 0 ){
           this.sec = 60;
-          this.min = this.min - 1; // 19 59
+          this.min = this.min - 1;
         }
         this.sec = this.sec - 1
         minElt.textContent = this.min + " min ";
