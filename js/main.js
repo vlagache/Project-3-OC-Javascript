@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
   prenomFormElt.value = localStorage.getItem("prenomSaveResa");
   //sessionStorage.clear();localStorage.clear();
   if ( sessionStorage.getItem("nomStationSaveResa") != null ){
-    
+
     noInfoStationElt.style.display="none";
     noReservationElt.style.display="none";
     reservationElt.style.display="block";
@@ -25,6 +25,10 @@ window.addEventListener("load", function(){
     canvasObj.clear();
   }
 });
+/* ================================= MAP ===========================================*/
+var mapObj = new Leafletmap(53.346497, -6.246155, 14, 'mymap', 'mapid');
+mapObj.displayMap();
+
 /* ================================= DIAPORAMA ==================================== */
 var diapoObj = new Diaporama(sliders);
 diapoObj.contentSlider();
