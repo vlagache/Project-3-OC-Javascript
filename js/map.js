@@ -11,14 +11,23 @@ class Leafletmap{
   displayMap(){
     this.nameMap = L.map(this.id).setView([this.mapLat,this.mapLng], this.mapZoom);
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmxhZ2FjaGUiLCJhIjoiY2pydG5ncXY1MG1xNTQ5bnBmbzNyZWhibiJ9.CnU0NPKEoINoyB-PEIPOmw', {
-      maxZoom: 18,
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      id: 'mapbox.streets'
+    //L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    //maxZoom: 18,
+    //  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+    //    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+    //    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    //  id: 'mapbox.streets',
+    // accessToken: 'pk.eyJ1IjoidmxhZ2FjaGUiLCJhIjoiY2pydG5ncXY1MG1xNTQ5bnBmbzNyZWhibiJ9.CnU0NPKEoINoyB-PEIPOmw'
+    //}).addTo(this.nameMap);
+  
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+        tileSize: 512,
+        maxZoom: 18,
+        zoomOffset: -1,
+        id: 'mapbox/streets-v12',
+        accessToken: 'pk.eyJ1IjoidmxhZ2FjaGUiLCJhIjoiY2pydG5ncXY1MG1xNTQ5bnBmbzNyZWhibiJ9.CnU0NPKEoINoyB-PEIPOmw'
     }).addTo(this.nameMap);
-
   }
   // Changement de couleur du marker en fonction du nombre de vélos dispo & ajout du marker sur la carte pour chaque station
   displayMarker(stationObj){
